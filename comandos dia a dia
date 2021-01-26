@@ -4,7 +4,7 @@ fdisk -l - mais infos dos discos sda sdb sdc
 netstat - atunp tras mais informações ver portas abertas
 ps -ef - verifica os processos rodando. se der um | grep mais init vai trazer infos sobre inicialização
 top - verifica os processos rodando e mostra um cabeçalho de informações. processo com -20 eh o mais prioritário
-chmod = altera permição
+chmod = altera permissão
 touch = cria arquivo
 chmod +x arq1 = altera permissao do arquivo arq1 
 ls -lha "nome do arquivo" = verifica permissões do arquivo
