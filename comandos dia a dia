@@ -1,0 +1,43 @@
+df -h 
+df -i "inodes"
+fdisk -l - mais infos dos discos sda sdb sdc
+netstat - atunp tras mais informações ver portas abertas
+ps -ef - verifica os processos rodando. se der um | grep mais init vai trazer infos sobre inicialização
+top - verifica os processos rodando e mostra um cabeçalho de informações. processo com -20 eh o mais prioritário
+chmod = altera permição
+touch = cria arquivo
+chmod +x arq1 = altera permissao do arquivo arq1 
+ls -lha "nome do arquivo" = verifica permissões do arquivo
+du -sh * = verifica os diretorios e o espaço usado por cada diretorio
+history =  ve os ultimos 1000 comandos
+history | tail =  tras somente os ultimos 10
+cat + arquivo =  visualiza o conteudo do arquivo sendo texto
+!* pega tudo que foi escrito apos o comando anterior, exemplo:
+touch teste1 teste2 teste3
+chmod +x !* =  alterou as permissoes dos arquivos teste1 teste2 e teste3
+alt + t =  inverte os argumentos
+rm + nome do arquivo =  apaga o arquivo
+tail -f /var/log/cron/abc.log pega as infos que estao ocorrendo no momento
+/etc/fstab = local onde fica descrito os diretorios que sao mapeados 
+lsblk = verifica os volumes apresentados no servidor
+dd if=/dev/nvme1n1 of=/dev/null bs=1M ajusta o disco informado a melhor performance possivel 1M 
+sudo yum install -y fio = programa que melhora performance do disco 
+sudo fio --filename=/dev/nvme2n1 --rw=read --bs=128k --iodepth=32 --ioengine=libaio --direct=1 --name=volume-initialize
+journalctl --since "2021-01-01 01:00:00" --until "2021-01-16 01:00:00" =  tras logs do periodo de dias 
+journalctl --since "2 hours ago" =  tras informaçoes das ultimas 2 horas
+journalctl  -k = tras as infos de kernel
+journalctl -u ssh = tras todas as informações de log
+journalctl -u docker
+journalctl -u zabbix
+journalctl -u ssh -f =  tras o que ocorre no momento
+journalctl -u ssh -n 3 = tras as ultimas 3 linhas
+journalctl -u ssh -r = tras os mais novos primeiro
+journalctl -u ssh -r -o json-pretty = tras no formato json
+journalctl -u ssh -r -o json-pretty -p "emerg" =  no formato json que sejam de emergencia
+journalctl -u ssh -r -o json-pretty -p "err" =  no formato json que sejam error
+journalctl -u ssh -r -o json-pretty -p "debug" =  no formato json que sejam debug
+journalctl -u ssh -r -o json-pretty -p "emerg".."err" = tras mensagens de emergencia e de erro
+journalctl -k -r -p "emerg" =  tras as mensagens de emergencia de kernel mais recentes
+id nomedousuario = tras o UID do usuario
+journalctl _UID=1000 = tras as informações do ID do usuario em questao
+usuario apache = www-data
