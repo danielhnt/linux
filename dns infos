@@ -1,0 +1,59 @@
+Linux: Start / Stop / Restart BIND DNS Server
+Author: Vivek Gite Last updated: April 26, 2013 1 comment
+
+How do I start / stop / restart the Berkeley Internet Name Daemon (BIND) dns server under Linux operating systems?
+
+BIND is by far the most widely used DNS software on the Internet. Use the following commands as per your Linux distro:
+Tutorial details
+Difficulty	Easy (rss)
+Root privileges	Yes
+Requirements	service command
+Time	N/A
+[a] service service-name command. [b] /etc/init.d/service-name script command. [c] rndc command – Name server control utility.
+CentOS / RHEL / Fedora Linux
+Type the following command to start BIND server:
+# service named start
+
+Type the following command to stop BIND server:
+# service named stop
+
+Type the following command to restart BIND server:
+# service named restart
+
+Type the following command to reload BIND server to reload zone file or config file changes:
+# service named reload
+
+Type the following command to see the current status of BIND server:
+# service named status
+
+You can also use the following syntax too:
+
+/etc/init.d/named start
+/etc/init.d/named stop
+/etc/init.d/named restart
+Debian / Ubuntu Linux
+Type the following command to start BIND server:
+# service bind9 start
+
+Type the following command to stop BIND server:
+# service bind9 stop
+
+Type the following command to restart BIND server:
+# service bind9 restart
+
+Type the following command to reload BIND server to reload zone file or config file changes:
+# service bind9 reload
+
+Type the following command to see the current status of BIND server:
+# service bind9 status
+
+Sample outputs:
+
+Fig.01: BIND 9 Service In Action
+Fig.01: BIND 9 Service In Action
+
+You can also use the following syntax too:
+/etc/init.d/bind9 start
+/etc/init.d/bind9 stop
+/etc/init.d/bind9 restart
+/etc/init.d/bind9 status
