@@ -9,6 +9,7 @@ touch = cria arquivo
 chmod +x arq1 = altera permissao do arquivo arq1 
 ls -lha "nome do arquivo" = verifica permissões do arquivo
 du -sh * = verifica os diretorios e o espaço usado por cada diretorio
+sudo find . -xdev -type f -size +100M =  procura arquivos maiores que 100Mb
 history =  ve os ultimos 1000 comandos
 history | tail =  tras somente os ultimos 10
 cat + arquivo =  visualiza o conteudo do arquivo sendo texto
