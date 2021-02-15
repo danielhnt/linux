@@ -42,3 +42,5 @@ journalctl -k -r -p "emerg" =  tras as mensagens de emergencia de kernel mais re
 id nomedousuario = tras o UID do usuario
 journalctl _UID=1000 = tras as informações do ID do usuario em questao
 usuario apache = www-data
+
+asdf
