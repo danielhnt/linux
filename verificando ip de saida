@@ -1,0 +1,47 @@
+
+Como descobrir seu ip externo no Linux usando o terminal
+IP é o acrônimo do Internet Protocol, que foi desenvolvido como um ID único e numérico, e que é atribuído a um dispositivo conectado à rede, de forma estática e dinâmica.
+
+Os dispositivos conectados à internet possuem 2 tipos de endereços IP:
+
+IP privado: É um endereço usado na rede local ou rede privada com a qual podemos conectar computadores ou dispositivos dentro da mesma rede. Este endereço não é o que você vê na Internet.
+IP público É o endereço que recebemos quando estamos online, que possui um servidor web ou um serviço oferecido na web.
+Atualmente, todos os nossos dispositivos conectados à Internet possuem um IP, que é seu identificador dentro da grande rede.
+
+Embora possamos “esconder” nossa trilha através de um proxy ou uma conexão VPN, é através deste IP, que os serviços registram os movimentos que fazemos na web.
+
+Por conta disso e de outras necessidades especificas, as vezes, precisamos conhecer o endereço IP da nossa máquina ou do nosso roteador.
+
+Por esse motivo, neste tutorial você verá como descobrir seu ip externo no Linux usando o terminal.
+
+Como descobrir seu ip externo no Linux usando o terminal
+Antes de começar, saiba que é possível conhecer nosso endereço público na web consultando alguns serviços online como IPlocation, See my IP, Geoipview, Cual es mi IP, Cual es mi IP e vários outros.
+
+Mas se você quer simplificar isso usando a linha de comando, para descobrir seu ip externo no Linux usando o terminal, você pode usar uma das opções abaixo.
+
+Opção 1: wget
+Você pode obter a informação do ip externo no terminal usando o comando wget, que é um poderoso gerenciador de linha de comando que oferece suporte a vários protocolos como HTTP, HTTPS, FTP e alguns mais. Ele pode ser usado com sites de terceiros para ver o endereço IP público, executando qualquer um dos seguintes comandos:
+
+wget -qO- ifconfig.co/ip
+wget -qO- http://ipecho.net/plain
+Opção 2: Dig
+Dig (informações de domínio groper) é uma ferramenta criada para testar servidores de nomes DNS. Se você quiser verificar o endereço IP público, podemos usar a resolução do opendns.com executando o seguinte comando:
+
+dig +short myip.opendns.com @resolver1.opendns.com
+Também é possível usar o comando dig através do Google DNS, o seguinte comando no terminal:
+
+dig TXT +short o-o.myaddr.l.google.com @ns1.google.com
+Ambos os comandos dão o mesmo resultado, mas alguns usuários comentam que o DNS do Google é mais rápido, enquanto outros dizem que são mais lentos.
+Ao ter ambas as possibilidades, todos podem tomar sua própria decisão sobre o servidor DNS a ser usado.
+
+Opção 3: Host
+O comando host é um utilitário de linha de comando fácil de usar para realizar pesquisas de DNS. Com o seguinte comando, podemos ver o endereço público do sistema operacional:
+
+host myip.opendns.com resolver1.opendns.com | grep "myip.opendns.com has" | awk '{print $4}'
+Opção 4: Nslookup
+Nslookup é um programa usado para saber se o DNS está resolvendo nomes e IPs corretamente. Como quando usamos o comando dig, este comando pode ser usado combinado com o serviço opendns desse modo:
+
+nslookup myip.opendns.com resolver1.opendns.com
+E também podemos usar o DNS do Google, digitando:
+
+nslookup -querytype=TXT o-o.myaddr.l.google.com ns1.google.com
