@@ -47,3 +47,36 @@ How to remove old kernel versions on Ubuntu 18.04 or above
 Type the following apt command or apt-get command:
 sudo apt --purge autoremove
 sudo apt-get --purge autoremove
+
+Apagar dados de log
+https://ubuntuhandbook.org/index.php/2020/12/clear-systemd-journal-logs-ubuntu/
+
+
+Going to free up Ubuntu system disk space? Try clearing the systemd journal logs, it may free up a few GB of space.
+
+By using the Disk Usage Analyzer tool, I found that /var/log/journal takes more than 4 GB system space in my Ubuntu 20.04.
+
+
+Systemd has its own logging system called the journal, and the log files are stored in /var/log/journal. As long as I don’t need the logs for any debugging, it’s safe to delete these files. And following steps will show you how.
+
+1. First open terminal from system app launcher, and you may run command to check out the current disk usage of all journal files:
+
+journalctl --disk-usage
+
+2. If you decide to clear the logs, run command to rotate the journal files. All currently active journal files will be marked as archived, so that they are never written to in future.
+
+sudo journalctl --rotate
+3. Now clear the journal logs by choosing one of following commands:
+
+Delete journal logs older than X days:
+sudo journalctl --vacuum-time=2days
+Delete log files until the disk space taken falls below the specified size:
+sudo journalctl --vacuum-size=100M
+Delete old logs and limit file number to X:
+sudo journalctl --vacuum-files=5
+4. You can also edit the configuration file to limit the journal log disk usage (100 MB for example).
+
+Run command in terminal to edit the file via Gedit text editor:
+
+sudo -H gedit /etc/systemd/journald.conf
+When the file opens, un-comment (remove # at the beginning) the line #SystemMaxUse= and change it to SystemMaxUse=100M.
