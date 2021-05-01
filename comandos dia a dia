@@ -1,5 +1,6 @@
 df -h 
 df -i "inodes"
+diff - pega a diferença entre dois arquivos, por exemplo diff index.html /updates/index.html irá comparar um arquivo no diretorio local com o outro arquivo com mesmo nome em outro diretorio
 fdisk -l - mais infos dos discos sda sdb sdc
 netstat - atunp tras mais informações ver portas abertas
 ps -ef - verifica os processos rodando. se der um | grep mais init vai trazer infos sobre inicialização
