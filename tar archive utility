@@ -32,3 +32,6 @@ OPTIONS
 -d = Find fifferences between the archive and the file system
 --delete = Delete a member from the archive (does not work with compression)
 -r = Append a file to the end an archive
+
+
+
