@@ -1,0 +1,34 @@
+tar
+
+Creates a tar file by converting groups of files and 
+directories into an archive. It was originally used to create 
+archives on magnetic tapes, whitch is the name
+comes from. Tar files end with the .tar extension followed
+by the compression that was used, if any (i.e, tar.gz).
+
+Syntax - tar [OPTIONS] [ARCHIVE_NAME] [FILENAME(s)]
+
+Options may be grouped together or separated out with a
+"-". When grouped, any option that takes an argument 
+shoud appear at the end.
+
+Example:
+
+tar -czf gzip.tgz DIR
+or
+tar -c -z -f azip.tar DIR
+
+OPTIONS
+-c = Create an archive
+-x = Extract an archive
+-t = List the contens of an archive
+-f = specify the archive file name
+-v = show files being processed by the command
+-z = filter the archive through gzip
+-j = filter the archive through bzip
+-J = filter the archive through xz
+-C = Choose a directory to extract the archive to
+-A = Append an archive to the end of another archive (does not work with compression)
+-d = Find fifferences between the archive and the file system
+--delete = Delete a member from the archive (does not work with compression)
+-r = Append a file to the end an archive
