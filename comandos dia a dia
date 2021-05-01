@@ -1,13 +1,14 @@
-df -h 
+df -h = verifica espaço nos volumes criados
 df -i "inodes"
+tree -L 1 = listar diretorio
 uname -a = pega as infos do so, data hora e afins
 sudo -i = invocar o root
 ll = listar diretorio
-diff - pega a diferença entre dois arquivos, por exemplo diff index.html /updates/index.html irá comparar um arquivo no diretorio local com o outro arquivo com mesmo nome em outro diretorio
-fdisk -l - mais infos dos discos sda sdb sdc
-netstat - atunp tras mais informações ver portas abertas
-ps -ef - verifica os processos rodando. se der um | grep mais init vai trazer infos sobre inicialização
-top - verifica os processos rodando e mostra um cabeçalho de informações. processo com -20 eh o mais prioritário
+diff = pega a diferença entre dois arquivos, por exemplo diff index.html /updates/index.html irá comparar um arquivo no diretorio local com o outro arquivo com mesmo nome em outro diretorio
+fdisk -l = mais infos dos discos sda sdb sdc
+netstat = atunp tras mais informações ver portas abertas
+ps -ef = verifica os processos rodando. se der um | grep mais init vai trazer infos sobre inicialização
+top = verifica os processos rodando e mostra um cabeçalho de informações. processo com -20 eh o mais prioritário
 chmod = altera permissão
 touch = cria arquivo
 chmod +x arq1 = altera permissao do arquivo arq1 
@@ -17,7 +18,7 @@ sudo find . -xdev -type f -size +100M =  procura arquivos maiores que 100Mb
 history =  ve os ultimos 1000 comandos
 history | tail =  tras somente os ultimos 10
 cat + arquivo =  visualiza o conteudo do arquivo sendo texto
-!* pega tudo que foi escrito apos o comando anterior, exemplo:
+!* = pega tudo que foi escrito apos o comando anterior, exemplo:
 touch teste1 teste2 teste3
 chmod +x !* =  alterou as permissoes dos arquivos teste1 teste2 e teste3
 alt + t =  inverte os argumentos
@@ -84,3 +85,66 @@ Run command in terminal to edit the file via Gedit text editor:
 
 sudo -H gedit /etc/systemd/journald.conf
 When the file opens, un-comment (remove # at the beginning) the line #SystemMaxUse= and change it to SystemMaxUse=100M.
+========================================================================================================================
+
+Estrutura de diretorios
+
+/home
+User home directories. Contains user-specific configuration files and data.
+
+/etc
+System-wide configuration files. These files are used to control the operation of a program.
+
+/usr/local
+Contains locally installed softwoare. The directory structure is purposely similar to that of root ("/") directory
+
+/opt
+Reserved for the installation of add-on application software packages
+
+/root
+Home directory of the root user. Contains configuration files and data for the root user.
+
+/srv
+Data for services provided by system.
+===============================================================================================================
+Subdirectories in /var for backup
+cd /var = entrar no diretorio
+tree -L 1 = mostrar estrutura de diretorio
+
+/var/backups (Debian)
+Contains apt and dpkg package status backups and other important systems file backups
+(i.e,/etc/passwd).
+
+/var/lib
+Contains variable state information for applications and system.
+
+/var/log
+Contains system and application logs.
+
+/var/mail
+Contains local user mail.
+
+/var/www
+A Default location for the web root of a web server. Can contain web content.
+
+=============================================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
