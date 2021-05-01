@@ -17,7 +17,6 @@ conv = Applies data conversion (use comma-separated list):
 * notrunc - dd will not truncate the output file
 * sync - dd will pad input blocks with NULs
 
-
 # dd if=/dev/sda of=/dev/sdb conv=noerror, sync
 --Copy an HDD to another HDD using noerror and sync
 
