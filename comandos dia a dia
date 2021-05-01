@@ -1,5 +1,8 @@
 df -h 
 df -i "inodes"
+uname -a = pega as infos do so, data hora e afins
+sudo -i = invocar o root
+ll = listar diretorio
 diff - pega a diferença entre dois arquivos, por exemplo diff index.html /updates/index.html irá comparar um arquivo no diretorio local com o outro arquivo com mesmo nome em outro diretorio
 fdisk -l - mais infos dos discos sda sdb sdc
 netstat - atunp tras mais informações ver portas abertas
