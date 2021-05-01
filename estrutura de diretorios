@@ -1,0 +1,19 @@
+Estrutura de diretorios
+
+/home
+User home directories. Contains user-specific configuration files and data.
+
+/etc
+System-wide configuration files. These files are used to control the operation of a program.
+
+/usr/local
+Contains locally installed softwoare. The directory structure is purposely similar to that of root ("/") directory
+
+/opt
+Reserved for the installation of add-on application software packages
+
+/root
+Home directory of the root user. Contains configuration files and data for the root user.
+
+/srv
+Data for services provided by system.
