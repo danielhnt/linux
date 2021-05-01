@@ -1,0 +1,23 @@
+===============================================================================================================
+Subdirectories in /var for backup
+cd /var = entrar no diretorio
+tree -L 1 = mostrar estrutura de diretorio
+
+/var/backups (Debian)
+Contains apt and dpkg package status backups and other important systems file backups
+(i.e,/etc/passwd).
+
+/var/lib
+Contains variable state information for applications and system.
+
+/var/log
+Contains system and application logs.
+
+/var/mail
+Contains local user mail.
+
+/var/www
+A Default location for the web root of a web server. Can contain web content.
+
+=============================================================================================
+
