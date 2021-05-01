@@ -1,0 +1,21 @@
+rsync
+
+rsync stands for remote sync and is used for copyng and 
+synchronizing files and directories both remotely and 
+locally
+
+Syntax - rsync [OPTIONS] SOURCE DESTINATION
+
+-a = Use archive mode which preserves permisions, ownership, etc
+-b = Performs a backup during data synbchronization
+-e = Specify a protocol
+-h = Output in a human readable format
+-n = Performs a dry run
+-r = Copy data recursively (do not keep ownership, permissions,etc.)
+-u = Skip files that are newer on the destination
+-v = Use verbose output
+-z = Use compression
+--progress = Show transfer progress
+--include/exclude = Choose files/directories to include/exclude
+--delete = delete any file or directory not located in the source
+--remove-source-files = Removes source files after a successful transfer
