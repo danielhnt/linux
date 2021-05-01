@@ -1,0 +1,35 @@
+dd
+The dd comand is used to convert and copy files. This 
+extends to entire disk/partitions which can be transferred
+to and from files or disks/partitions.
+
+Syntax -dd [OPERAND]...
+        dd [OPTION]
+
+if = The input file (file/disk/partition)
+of = The output file (file/disk/partition)
+bs =  Read an write BYTES at time (default: 512)
+count = Number of blocks to transfer
+ibs = Read up to BYTES at a time (default: 512)
+obs = Write BYTES at a time (default: 512)
+conv = Applies data conversion (use comma-separated list):
+* noerror - dd will continue running even if it encounters errors
+* notrunc - dd will not truncate the output file
+* sync - dd will pad input blocks with NULs
+
+
+# dd if=/dev/sda of=/dev/sdb conv=noerror, sync
+--Copy an HDD to another HDD using noerror and sync
+
+# dd if=/dev/sda of /home/sda.img
+--Create an image of an HDD
+
+# dd if=home/sda.img of=dev/sdb
+--Restore an image of an HDD
+
+# dd if=dev/cdrom of=/home/backup.iso bs=2048
+--Create a backup of a CDROM using a block size of 2048
+
+# dd if=/dv/zero of=/dev/sda bs=4096
+--Overwrite a disk with zeros using a block size of 4096
+
