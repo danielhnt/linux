@@ -1,0 +1,75 @@
+Notify users on system related issues
+
+/etc/issue and /etc/issue.net
+
+issue and issue.net
+
+/etc/issue is a text file whicj contains a message
+or system identification to be printed before the
+login prompt. It way contain varios @char and
+/char sequences, if supported by getty-type 
+program employed on the system.
+
+/etc/issue.net is the historical location for pre-
+loggin banners for network logins using protocols like
+telnet or rlogin, but can be used for ssh
+(escaped characters are not processed).
+
+IMPORTANT
+To add a message for remote logins, the banner 
+path in /etc/ssh/sshd_config must be updated 
+and the sshd service must be restarted.
+
+Option | Description
+\b = Insert the baud rate of the current line.
+\d = Insert the current date.
+\s = Insert the system name, the name of the operating system
+\l = Insert the name of the current tty line.
+\m = Insert the architecture identifier of the machine.
+\n = Insert the node name of the machine, also know as the hostname.
+\o = Insert the domain name of the machine.
+\r = Insert the release number of the OS
+\t = Insert the current time
+\u = Insert the number of current users logged in
+\U = Insert the string "1 user" or "users", where "users" is the number of current users logged in.
+\v = Insert the version of the OS, eg the build-date etc.
+--------------------------------------------------------------------------------------------------------
+/etc/motd
+
+The contents of /etc/motd are displayed after a successful login
+before the login shell is executed. The abbreviation "motd" stands for 
+"message of the day", and this file has been traditionally used for exactly
+that (it requires much less disk space than mail to all users)
+
+Sample /etc/motd
+Welcome to Ubuntu 18.04.5 LTS
+
+------------------------------------------------------------------------------------
+Configure /etc/issue
+
+vim /etc/issue
+\S
+Kernel \r on an \m
+----------------------------------------------------------------------------------
+#Configure /etc/issue.net
+
+vim /etc/issue.net
+\S
+Kernel \r on an \m
+
+----------------------------------------------------------------------------------
+#Configure /etc/ssh/sshd_config
+
+vim /etc/ssh/sshd_config
+find Banner
+#retire o commited e inclui o dado que queremos que apareça quando logar remotamente
+Banner /etc/issue.net
+save :wq!
+
+#restart sshd service
+systemctl restart sshd
+
+=======================================================================================
+
+
+
