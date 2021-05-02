@@ -1,1 +1,66 @@
+Creating and Restoring Backups 1
+
+#criar uma pasta para realizar o backup
+mkdir /home/cloud_user/backup
+
+#criar backup do diretorio /var/ na pasta criada para backup
+tar -cvzf /home/cloud_user/backup/var_bkp.tgz /var/
+
+#verificando o backup realizado
+ll /home/cloud_user/backup/
+
+#criar um backup full do servidor
+tar -cvjf /home/cloud_user/backup/full_bkp.tbz /etc/ /home/ /usr/local/ /opt/ /var/log/ /var/lib/ /srv/
+
+#verificar o backup full criado
+ll /home/cloud_user/backup
+
+#criar diretorio de backup dentro da pasta /tmp 
+mkdir /tmp/backup
+
+#extrair o var_bkp.tgz com gzip dentro do diretorio /tmp/backup
+tar -xvzf /home/cloud_user/backup/var_bkp.tgz -C /tmp/backup
+
+#listar o backup realizado dentro da pasta /tmp/backup
+ll /tmp/backup
+
+#extrair o full_bkp.tbz dentro do diretorio /tmp/backup
+tar -xvjf /home/cloud_user/backup/full_bkp.tbz -C /tmp/backup
+
+#listar o que extraimos dentro da pasta /tmp/bkp
+ll /tmp/backup/
+
+====================================================================================================================
+
+Creating and Restoring Backups 2
+
+#realizar um rsync para enviar um backup gerado no servidor1 para servidor2, com arquivos comprimidos e com verbose
+
+rsync -vzh /home/cloud_user/backup/var_bkp.tgz usuario@ipdoservidor:/local_onde_colocar_bkp
+ex: 
+rsync -vzh /home/cloud_user/backup/var_bkp.tgz cloud_user@10.0.1.102:/home/cloud_user/
+
+#realizar o rsync de forma recursiva, mantendo permissoes e afins
+rsync -avzh /home/cloud_user/backup/var_bkp.tgz cloud_user@10.0.1.102:/home/cloud_user/
+
+# OBS:neste caso se ja tiver enviado o backup antes, como realizamos um rsync apenas a divergencia sera enviada
+
+#enviando o arquivo com full backup para o servidor2
+rsync -avzh /home/cloud_user/backup/full_bkp.tgz cloud_user@10.0.1.102:/home/cloud_user/
+
+#realizar rsync do diretorio /etc para dentro do diretorio /home/cloud_user/backup sem compressao
+rsync -avh /etc /home/cloud_user/backup
+
+#realizar rsync com tudo dentro do diretorio
+rsync -avh /etc/ /tmp/backup/
+
+#realizar um sync excluindo dados dentro do diretorio /home/cloud_user/backup/ que contem '*bkp*' para o diretorio /tmp/
+rsync -avzh --exclude '*bkp*' /home/cloud_user/backup/ /tmp/
+
+#realizar um full backup do servidor1 para o servidor2 
+rsync -avzh /etc /home /usr/local /opt /var/log /var/lib /srv cloud_user@10.0.1.10:/home/cloud_user
+
+#com o rsync sempre q enviar o dado uma segunda vez de um lado para outro irá pegar a diferença 
+
+
 
