@@ -62,5 +62,34 @@ rsync -avzh /etc /home /usr/local /opt /var/log /var/lib /srv cloud_user@10.0.1.
 
 #com o rsync sempre q enviar o dado uma segunda vez de um lado para outro irá pegar a diferença 
 
+===============================================================================================================================
+
+Creating and Restoring Backups 3
+
+#converter um texto com dd
+dd conv=ucase
+convert me!
+CONVERT ME!
+
+#verificar nome, tamanho, tipo e montpoint de discos criados no servidor
+lsblk
+
+#clonar um disco xvdf para xvdg com block size de tamanho 4M
+dd if=/dev/xvdf of=/dev/xvdg bs=4M
+
+#realizar um wipe do xvdg
+dd if/dev/zero of=/dev/xvdg bs=4M
+
+#converter um disco para um arquivo.img dentro do servidor com block size 4M sem erros realizando sync
+dd if=/dev/xvdf of=/home/cloud_user/backup/xvdf.img bs=4M conv=noerror,sync
+
+#criar uma imagem de um diretorio zipada para ocupar menos espaço especificando o nome
+dd if=/dev/xvdf bs=4M | gzip -c > /home/cloud_user/backup/xvdf.img.gz 
+
+#restaurar arquivo para um diretorio especifico
+dd if=/home/cloud_user/backup/svdf.img of=/dev/xvdg bs=4M  
+
+
+=================================================================================
 
 
