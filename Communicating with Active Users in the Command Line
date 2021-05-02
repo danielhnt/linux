@@ -1,1 +1,43 @@
+The wall and shutdown utilities
+wall
 
+wall displays a message, the contents of a file, or
+otherwise its standard input, on the terminals of all currently 
+logged-in users.
+
+Syntax -wall [-n] [-t timeout] [-g group] [message | file]
+
+Option - Description
+-n = Supress the banner
+-t = Abandon the write attempt after time specified
+-g = Limit message to members of a group (or GID)
+-v = Display version information
+-h = Display help text
+------------------------------------------------------------------------
+shutdown
+
+shutdown is used to halt, power-ff, or reboot the machine.
+* A shutdown time may be specified in "hh:mm" format or 
+with "+m" is the number of minutes from now
+("now" is an alias for "+0").
+
+*In order to send a wall message, you must specify a time
+argument.
+
+Syntax - shutdown [OPTIONS...] [TIME] [WALL...]
+Option - Description
+
+-H = Halt the machine
+-P = -P Power off the machine (this is the default)
+-r = Reboot the machine
+-k = Do not halt, power-off, or reboot; just write wall messages
+-c = Cancel a pending shutdown
+
+------------------------------------------------------------------------
+
+The following commands are used in place of shutdown on systemd-based systems:
+systemctl halt
+systemctl poweroff
+systemctl reboot
+
+--------------------------------------------------------------------------
