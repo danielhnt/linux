@@ -57,3 +57,21 @@ You can also use the following syntax too:
 /etc/init.d/bind9 stop
 /etc/init.d/bind9 restart
 /etc/init.d/bind9 status
+=======================================================================================================
+
+#Configure Your System to Use Your Network's DNS
+#Modify the system's default connection to use the network's DNS server:
+sudo nmcli con mod "System ens5" ipv4.dns "10.0.0.2"
+
+#Verify the settings using the nmcli command and then checking the /etc/resolv.conf file:
+nmcli -f ipv4.dns con show "System ens5"
+cat /etc/resolv.conf
+
+#We need to reactivate the system's network connection for the change to take effect:
+sudo nmcli con up "System ens5"
+
+#Verify our settings once more:
+cat /etc/resolv.conf
+
+#Now, attempt to resolve a hostname to an IP address:
+host www.google.com
