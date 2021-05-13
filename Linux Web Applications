@@ -1,0 +1,68 @@
+#Install APACHE
+yum install -y httpd httpd-manual
+#or
+yum group install -y web-server
+
+--------------------------------------------------------
+#start the httpd service
+systemctl start httpd
+
+-------------------------------------------------------
+Configuring APACHE
+
+#access location configuration APACHE
+cd /etc/httpd - rhel/centoS
+
+cd /etc/apache2 - ubuntu/debian
+
+cd /conf
+view httpd.conf - infos configuration of apache
+
+cd /conf.d - adicional informations
+
+cd /conf.modules.d - infos about modules
+
+logs -> var/log/httpd - infos about logs
+
+cd /run - infos about run process
+
+ps -ef|grep ID - view process info
+
+cd /var/www/html
+vim index.html - infos display in site
+
+links on our server name
+links servername.domain.com
+----------------------------------------------------------
+APACHE logging
+
+Apache logs
+cat /car/log/http/error_log
+
+tail -f /var/log/http/error_log
+
+Security Warning
+DO NOT grant write access for unauthorized users on the directory 
+where Apache is Writing log files, because users can gain access 
+to the UID that APACHE server is started as!! 
+
+log rotation
+
+-------------------------------------------------------------
+Authentication and Access Restriction
+
+create login secured sites
+yun install -y httpd links
+vim /etc/hosts
+mkdir /var/www/httpd/securesite1
+echo "This is secure site 1." > /var/www/httpd/securesite1/index;html
+htpasswd -c /etc/httpd/passwd secureuser1
+vim /etc/httpd/conf/httpd.conf
+systectl restart httpd
+
+<Directory /var/www/html/securesite1?
+AuthName "Secure Site 1"
+AuthType Basic
+AuthUserFile /etc/httpd/passwd
+Require valid-user
+</Directory>
