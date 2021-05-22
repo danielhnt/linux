@@ -1,5 +1,6 @@
 df -h = verifica espaço nos volumes criados
 df -i "inodes"
+ip -br a = tras infos de ip organizado
 tree -L 1 = listar diretorio
 uname -a = pega as infos do so, data hora e afins
 pwd = mostra o diretorio atual
