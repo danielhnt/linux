@@ -1,3 +1,5 @@
+wall = manda mensagens para todos os usuarios logados no servidor
+dmesg = conseguimos visualizar as informações que foram geradas no processo de boot do kernel
 df -h = verifica espaço nos volumes criados
 df -i "inodes"
 ip -br a = tras infos de ip organizado
