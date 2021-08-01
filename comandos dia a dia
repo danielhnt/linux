@@ -52,6 +52,7 @@ id nomedousuario = tras o UID do usuario
 journalctl _UID=1000 = tras as informações do ID do usuario em questao
 usuario apache = www-data
 cat /etc/issue = mostra versao do sistema instalado
+cat /etc/redhat-release =  versao centos/redhat instalado
 
 How to remove old kernel versions on Ubuntu 18.04 or above
 Type the following apt command or apt-get command:
