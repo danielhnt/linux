@@ -93,7 +93,7 @@ sudo -H gedit /etc/systemd/journald.conf
 When the file opens, un-comment (remove # at the beginning) the line #SystemMaxUse= and change it to SystemMaxUse=100M.
 
 
-
+resize (mount) aplicar mais espaço ao disco.
 
 
 
