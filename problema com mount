@@ -1,0 +1,3 @@
+#Para realizar o remount dos mounts quando o fstab esta como ready only
+mount -o remount, rw /
+
