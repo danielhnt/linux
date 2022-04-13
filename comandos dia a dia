@@ -12,6 +12,7 @@ diff = pega a diferença entre dois arquivos, por exemplo diff index.html /updat
 fdisk -l = mais infos dos discos sda sdb sdc
 netstat = atunp tras mais informações ver portas abertas
 ps -ef = verifica os processos rodando. se der um | grep mais init vai trazer infos sobre inicialização
+ps -ef | grep -i "serviço a ser verificado" ex: ps -ef | grep -i mysql
 top = verifica os processos rodando e mostra um cabeçalho de informações. processo com -20 eh o mais prioritário
 chmod = altera permissão
 touch = cria arquivo
