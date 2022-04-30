@@ -1,7 +1,7 @@
-Linux: Start / Stop / Restart BIND DNS Server
-Author: Vivek Gite Last updated: April 26, 2013 1 comment
+#Linux: Start / Stop / Restart BIND DNS Server
+#Author: Vivek Gite Last updated: April 26, 2013 1 comment
 
-How do I start / stop / restart the Berkeley Internet Name Daemon (BIND) dns server under Linux operating systems?
+#How do I start / stop / restart the Berkeley Internet Name Daemon (BIND) dns server under Linux operating systems?
 
 BIND is by far the most widely used DNS software on the Internet. Use the following commands as per your Linux distro:
 Tutorial details
