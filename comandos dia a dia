@@ -96,7 +96,9 @@ When the file opens, un-comment (remove # at the beginning) the line #SystemMaxU
 
 resize (mount) aplicar mais espaço ao disco.
 
-
+[volumes do ext4] Use o comando resize2fs para estender o sistema de arquivos em cada volume.
+[ec2-user ~]$ sudo resize2fs /dev/xvda1
+[ec2-user ~]$ sudo resize2fs /dev/xvdf1
 
 
 
