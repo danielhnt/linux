@@ -59,9 +59,9 @@ How to remove old kernel versions on Ubuntu 18.04 or above
 Type the following apt command or apt-get command:
 sudo apt --purge autoremove
 sudo apt-get --purge autoremove
-
-Apagar dados de log
-https://ubuntuhandbook.org/index.php/2020/12/clear-systemd-journal-logs-ubuntu/
+Apagar dados de log = https://ubuntuhandbook.org/index.php/2020/12/clear-systemd-journal-logs-ubuntu/
+find / -type f -size +500M.
+Find files that are greater than 1 GB. find / -type f -size +1G.
 
 
 Going to free up Ubuntu system disk space? Try clearing the systemd journal logs, it may free up a few GB of space.
