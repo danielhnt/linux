@@ -103,4 +103,27 @@ resize (mount) aplicar mais espaço ao disco.
 gerar chave nominal
 ssh-keygen -b 2048 -t rsa -f ansible-key
 
+mkdir -p /home/administrator/.ssh
+chmod 700 /home/administrator/.ssh
+chmod 600 /home/administrator/.ssh/authorized_keys
+ ou
+
+ssh ubuntu@192.168.1.5 mkdir -p .ssh
+cat ansible-key.pub | ssh administrator@192.168.1.5 'cat >> .ssh/authorized_keys'
+ssh administrator@192.168.1.5 'chmod 700 .ssh && chmod 640 .ssh/authorized_keys'
+
+
+copiar chave para outro host
+
+acessar via ssh com uma chave especifica em um usuario que ainda tem senha
+ssh -i ansible-key ubuntu@192.168.1.2
+
+################
+criar um arquivo config dentro do .ssh, faz com que seja testada todas as chaves contidas nesse arquivo para tentar fazer login via ssh sem senha atraves da chave rsa.
+vim config
+#ubuntu
+#
+IdentityFile "~/.ssh/ubuntu"
+IdentityFile "~/.ssh/id_rsa"
+IdentityFile "~/.ssh/ansible-key"
 
