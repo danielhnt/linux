@@ -100,6 +100,7 @@ resize (mount) aplicar mais espaço ao disco.
 [ec2-user ~]$ sudo resize2fs /dev/xvda1
 [ec2-user ~]$ sudo resize2fs /dev/xvdf1
 
-
+gerar chave nominal
+ssh-keygen -b 2048 -t rsa -f ansible-key
 
 
